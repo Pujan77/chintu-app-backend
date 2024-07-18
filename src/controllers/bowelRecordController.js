@@ -2,7 +2,7 @@ const BowelRecord = require('../models/BowelRecord');
 
 const createBowelRecord = async (req, res) => {
     try {
-        const { location, bowelConsistency, bowelQuantity, bowelColor, observedByWho } = req.body;
+        const { location,spot, bowelConsistency, bowelQuantity, bowelColor, observedByWho } = req.body;
         const date = req.body.date || new Date().toISOString().split('T')[0];
         const time = req.body.time || new Date().toISOString().split('T')[1].slice(0, 5);
         
@@ -10,6 +10,7 @@ const createBowelRecord = async (req, res) => {
             date,
             time,
             location,
+            spot,
             bowelConsistency,
             bowelQuantity,
             bowelColor,
